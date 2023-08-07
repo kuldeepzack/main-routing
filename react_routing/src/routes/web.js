@@ -9,13 +9,22 @@ import Showhide from "../pages/Showhide";
 import Apitable from "../pages/Apitable";
 import Sortdata from "../pages/Sortdata";
 import Navbar from "../Navbar";
+import Pagination from "../pages/Pagination";
+import Design from "../pages/Design"
+import Fileupload from "../pages/Fileupload";
+
+import Create from "../components/Create";
+import Update from "../components/Update";
+import Read from "../pages/Read";
 
 function Web() {
+
+
   return (
     <>
-      <div className="background-container"/>
+ <div className="background-container">
+      
       <Navbar />
-      <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -24,10 +33,19 @@ function Web() {
           <Route path="/showhide" element={<Showhide />} />
           <Route path="/Apitable" element={<Apitable/>}/>
           <Route path="/Sortdata" element={<Sortdata/>}/>
-
+          <Route path="/Pagination" element={<Pagination/>}/>
+          <Route path="/Design" element={<Design/>}/>
+          <Route path= "/Fileupload" element ={<Fileupload/>}/>
+          
+          <Route path= "/Create" element ={<Create/>}/>
+          <Route path= "/Read" element ={<Read/>}/>
+          <Route path= "/Update" element ={<Update/>}/>
+        
         </Routes>
+       
         </div>
     </>
+    
   );
 }
  

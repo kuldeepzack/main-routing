@@ -1,0 +1,18 @@
+.page-container {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #d1eee1;
+  border-radius: 30px;
+  height: 50%;
+  margin-left: 616px;
+  margin-top: 10%;
+}
+
+.search-text {
+  margin-left: 160px;
+}
+
+

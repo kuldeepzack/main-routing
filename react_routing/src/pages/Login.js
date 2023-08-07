@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
+
 const countries = ["USA", "Canada", "UK", "Australia", "India"];
 
 function LoginPage() {
@@ -28,90 +29,103 @@ function LoginPage() {
   };
 
   return (
+    <div className="main_container">
     <div className="pages">
-      <h2>Login Page</h2>
-      {submitted ? (
-        <div>
-          <p>User ID: {userId}</p>
-          <p>Password: {password}</p>
-        </div>
-      ) : (
-        <div>
-          <form onSubmit={handleSubmit}>
-            <label>User ID:</label>
-            <input
-              type="text"
-              value={userId}
-              onChange={(e) => setUserId(e.target.value)}
-            />
-            <br />
-            <label>Password:</label>
-            <input
-              type="text"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <br />
-            <button onClick={handleLogin}>Login</button>
-          </form>
-        </div>
-      )}
+      <div className=" row ">
+        <div className="col-md-6"><div className="log-pages">
+          
+          {submitted ? (
+            <div className="log-container">
 
-      {submitted && (
-        <div>
-          <h2>User Details Form</h2>
-          <p>Name: {name}</p>
-          <p>Last Name: {lastName}</p>
-          <p>College: {college}</p>
-          <p>Email: {email}</p>
-          <p>Country: {country}</p>
-        </div>
-      )}
+              <p>User ID: {userId}</p>
+              <p>Password: {password}</p>
+            </div>
+          ) : (
+            <div className="log-container">
+              <h2>Login Page</h2>
+              <form onSubmit={handleSubmit}>
+                <label>User ID:</label>
+                <input
+                  type="text"
+                  value={userId}
+                  onChange={(e) => setUserId(e.target.value)}
+                />
+                <label>Password:</label>
+                <input
+                  type="text"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
 
-      {!submitted && (
-        <form onSubmit={handleSubmit}>
-          <h2>User Details Form</h2>
-          <label>Name:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <br />
-          <label>Last Name:</label>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-          <br />
-          <label>College:</label>
-          <input
-            type="text"
-            value={college}
-            onChange={(e) => setCollege(e.target.value)}
-          />
-          <br />
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <br />
-          <label>Country:</label>
-          <select value={country} onChange={(e) => setCountry(e.target.value)}>
-            <option value="">Select Country</option>
-            {countries.map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      )}
+              </form>
+                <button className=" mkk" onClick={handleLogin}>Login</button>
+            </div>
+          )}
+        </div> </div>
+        <div className="col-md-6">
+          {submitted && (
+            <div className="sub-pages">
+              <p>User Details Form</p>
+              <p>Name: {name}</p>
+              <p>Last Name: {lastName}</p>
+              <p>College: {college}</p>
+              <p>Email: {email}</p>
+              <p>Country: {country}</p>
+            </div>
+          )}
+
+          {!submitted && (
+            <div className="sub-pages">
+              <form onSubmit={handleSubmit}>
+                <h2>User Details Form</h2>
+                <label>Name:</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+
+                <label>Last Name:</label>
+                <input
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+
+                <label>College:</label>
+                <input
+                  type="text"
+                  value={college}
+                  onChange={(e) => setCollege(e.target.value)}
+                />
+
+                <label>Email:</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <label>Country:</label>
+                <select value={country} onChange={(e) => setCountry(e.target.value)}>
+                  <option value="">Select Country</option>
+                  {countries.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
+
+                
+              </form>
+              <button  onClick={handleSubmit} className="mkk" type="submit">Submit</button>
+            </div>
+          )} </div>
+      </div>
+
+
+
+    </div>
     </div>
   );
 }

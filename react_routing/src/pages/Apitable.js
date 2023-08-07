@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import "./Apitable.css"
 import { ColorRing } from  'react-loader-spinner';
 
+import edit from "../assets/images/edit.png"
+import bin from "../assets/images/bin.png"
 
 const Apitable = () => {
     const [url, setUrl] = useState("");
@@ -25,9 +27,10 @@ const Apitable = () => {
 
     const fetchData = () => {
         setTimeout(() => {
+            setLoading(true)
             fetch(url, { method })
             .then(response => response.json())
-            .then(data => { setResponseData(data.data); setFilteredList(data.data) })
+            .then(data => { setResponseData(data.data); setFilteredList(data.data) ;setLoading(false)})
             .catch(error => console.log(error));
         }, 1000);
         
@@ -40,10 +43,11 @@ const Apitable = () => {
                 // return (item.responseData).toLowerCase().includes((event.target.value).toLowerCase());
                 return (item.email).toLowerCase().includes((event.target.value).toLowerCase());
 
-               
+            
 
             });
             if (updatedList)
+           
                 setFilteredList(updatedList);
             setStatus(true);
         }
@@ -54,7 +58,8 @@ const Apitable = () => {
     };
 
     return (
-        <div className='Apitable'>
+        <div className='apitable-container'>
+        <div className='Apitable '>
             <select value={method} onChange={handleMethodChange}>
                 <option value="GET">GET</option>
                 <option value="POST">POST</option>
@@ -63,7 +68,7 @@ const Apitable = () => {
             </select>
 
             <input type="text" value={url} onChange={handleUrlChange} />
-            <button onClick={fetchData}>Submit{loading ? "Loading...":" "}</button>
+            <button  className='btn btn-success'  onClick={fetchData}>Submit{loading ? "Loading...":" "} </button>
             {loading && 
         <ColorRing
  
@@ -82,15 +87,16 @@ const Apitable = () => {
               "Response Data" : "Filtered data"
             }</h2>
 
-            <div className='table'>
-                <table border={3 }>
-                    <thead>
+            <div className='table '>
+                <table border={3 } className='table-striped table-dark '>
+                    <thead >
                         <tr>
                             <th>email</th>
                             <th>first_name</th>
                             <th>last_name</th>
                             <th>avatar</th>
                             <th>img</th>
+                            <th>action</th>
                         </tr>
                     </thead>
                     {responseData && filteredList?.map((data, index) => {
@@ -102,6 +108,13 @@ const Apitable = () => {
                                 <td>{data.last_name}</td>
                                 <td>{data.avatar}</td>
                                 <td><img src={data.avatar} alt="" height="100" width="100" /></td>
+                                <td className='Action'>  
+                                  < img className='Action1' src={edit} alt='...' onClick={() => { alert('remove') }}/>
+                                  < img className='Action1' src={bin} alt='...' onClick={() => { alert('remove') }}/>
+                                
+                                
+                                
+                                </td>
 
 
                             </tr>
@@ -111,7 +124,11 @@ const Apitable = () => {
                     })}
                 </table>
             </div>
-            <h1>Current date is {date}</h1>
+            {/* <p>Current date is {date}</p> */}
+            <h1 style={{ color: '' }}>
+      {date}
+    </h1>
+        </div>
         </div>
     )
 }

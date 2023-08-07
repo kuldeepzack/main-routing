@@ -1,5 +1,6 @@
 import React ,{ useState}from 'react';
-import "./Login.css"
+import "./Sortdata.css"
+
 let products = [
     {
         "product_name": "Witchers",
@@ -46,7 +47,7 @@ function Sortdata() {
     const filterBySearch = (event) => {
         if (event.target.value !== "") {
           let updatedList = productdata?.filter((item) => {
-            return item.product_name.includes(event.target.value);
+            return (item.product_name).toLowerCase().includes((event.target.value).toLowerCase());
           });
           if (updatedList)
             setProductData(updatedList);
@@ -59,7 +60,12 @@ function Sortdata() {
       };
 
     return (
-        <div className='pages'>
+        <div className='page-container'>
+        <div className='page'>
+             <div className="search-text">{ !status ? "SearchItem": "FilteredItem"}
+           
+            <input id="search-box" onChange={filterBySearch} />
+            </div>
             {productdata.map(
                 (element) => {
                     return (
@@ -72,9 +78,9 @@ function Sortdata() {
                         </div >
                     )})
             }
-            <button onClick={(e) => { handlesubmitdata() }}   >Submit</button>
-            <div className="search-text">{ !status ? "SearchItem": "FilteredItem"}</div>
-            <input id="search-box" onChange={filterBySearch} />
+            <button className='mkk' onClick={(e) => { handlesubmitdata() }}   >Submit</button>
+           
+        </div>
         </div>
     )
 }
@@ -83,13 +89,4 @@ export default Sortdata;
 
 
 
-   // const filterBySearch = (event) => {
-    //     if (event.target.value === "") {
-    //         setProductData(filteredList);
-    //     } else {
-    //         let updatedList = productdata.filter((item) => {
-    //             return item.product_name === event.target.value;
-    //         });
-    //         setProductData(updatedList);
-    //     };
-    // }
+   

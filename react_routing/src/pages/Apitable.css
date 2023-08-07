@@ -1,6 +1,6 @@
 .Apitable{
-    background-color: antiquewhite;
-    width: 80%;
+  background-color: #D1EEE1;
+    /* width: 80%; */
    
     border-radius: 57px;
     padding: 50px 70px;
@@ -8,13 +8,26 @@
 
 
 
-.table{
-    
+.Action1{
+  width: 30px;
+  /* display: flex; */
  
-    display: flex;
-    justify-content: center;
-  }
+}
+.Action{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
 
-  table{
-    border:3px black;
+  .apitable-container{
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 500px;
+
   }
+/* 
+  .table1{
+    border: 3px solid;
+  } */

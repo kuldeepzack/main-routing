@@ -1,32 +1,27 @@
 .api{
 
-    /* border: 5px solid #000000; */
-     
-    background-color: #a892ee;
+  
 
     /* padding: 6px; */
-    width: 50%;
+    width: 21%;
     margin:10%;
-    margin-left: 20%;
-    border-radius: 8%;
+    margin-left: 33%;
+    border-radius: 15px;
     margin-top: 100px; 
-    background-color: antiquewhite;
-    /* width: 50%; */
-    /* height: 200px; */
-    /* border-radius: 57px; */
+    background-color: #D1EEE1;
+ 
     padding: 30px 40px;
 
 
 }
 
 
-.table{
-    
- 
-    display: flex;
-    justify-content: center;
-  }
+.ap{
+  margin-top: 10%;
+  font-weight: 500;
+}
 
-  table{
-    border:3px black;
-  }
+
+.app{
+  border-radius: 10px;
+}

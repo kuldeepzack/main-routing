@@ -1,7 +1,39 @@
-.show{
-    background-color: antiquewhite;
-    width: 50%;
+/* .show{
+ 
+    background-color: white;
+    width: 22%;
     height: 500px;
+
     border-radius: 57px;
     padding: 30px 40px;
+}
+
+.pagination-container{
+    padding: 30px;
+    width: 25%;
+    background-color: #D1EEE1 ;
+    border-radius: 45px;
+
+}
+
+.pagination{
+    display: flex;
+    
+}
+ */
+body{
+    background-color: white;
+    border: 2px;
+
+}
+
+.main_container1{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    width: 12%;
+    margin-left: 40%;
+    margin-top: 7%;
 }

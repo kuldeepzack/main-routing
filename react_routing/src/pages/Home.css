@@ -17,7 +17,7 @@ input.login-field {
 .new-expense__control{
     padding: 10px;
     
-} */.form {
+} */.formm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,13 +27,23 @@ input.login-field {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1px;
+    /* margin-bottom: 1px; */
   }
  
   .login-field {
     width: 250px;
     height: 40px;
-    padding: 1px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #4dc98f;
+
+  }
+  input:focus-visible {
+    outline-offset: 0px;
+    outline: 0!important;
+}
+  .login-field:focus{
+    border:2px solid #4dc98f;
   }
   
   .password-input-container {
@@ -46,6 +56,7 @@ input.login-field {
     right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
+    margin-top: 16px;
   }
   
   .password-icon {
@@ -57,12 +68,107 @@ input.login-field {
     display: flex;
     justify-content: center;
   }
-  
 
-  .main{
-    background-color: antiquewhite;
-    width: 45%;
-    height: 570px;
-    border-radius: 57px;
-    padding: 30px 40px; 
+  .main_container{
+    display: flex;
+    /* align-content: center!important; */
+    justify-content: center;
+    align-items: center;
+  height: 100vh;
   }
+
+  .mt20{
+    margin-top: 20px;
+
+  }
+
+  
+/* .main_container {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+  
+.main-right{
+  
+    /* background-color: #D1EEE1; */
+    /* border-radius: 45px; */
+    background-color: white;
+    width: 30%;
+    padding: 34px;
+  
+}
+.main-left{
+  background: url("../assets/images/mainleft.png");
+width:30%;
+padding: 34px;
+
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+  /* .main{
+    background-color: #D1EEE1;
+  /* background-image: url("http://localhost:3002/static/media/sidebarBanner.7c05f95c17433c70b2fc.png"); */
+
+    /* width: 47%;
+    height: 570px;
+    border-radius: 45px;
+    padding: 30px 40px; 
+  } */ */
+/* 
+  .loader-container {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+} */
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius:40px;
+ 
+  
+}
+
+
+.new-expense__actions{
+  margin-top: 10px;
+}
+
+
+.user{
+  margin-top: 44px;
+}
+
+
+.btn-login{
+  border-radius: 8px;
+}
+
+/* .mkk{
+  background-color: #7ad7da;
+  width: 150px;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 0 0.2rem #6ec6c9;
+  border: none;
+} */
+
+
+/* .log-box{
+  height: 454px;
+  width: 728px;
+  
+  margin-top: 7px;
+} */

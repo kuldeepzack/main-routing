@@ -1,0 +1,21 @@
+.uploader{
+    width:25%;
+    padding: 0px;
+    /* background-color: white ; */
+    border-radius: 45px;
+    background: linear-gradient(-45deg,#ee7652a3,#e73c7e9e,#23a5d593,#23d5ab9c);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+     /* display:flex ; 
+    justify-content: center; 
+    flex-direction: column; 
+    margin-left: 30%;
+    margin-top: 8%;  */
+} 
+
+.upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}

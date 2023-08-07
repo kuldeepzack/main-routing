@@ -1,6 +1,6 @@
 import React from 'react'
 import Frontlogin from './Frontlogin';
-// import applicantDetailStore from './applicantDetailStore';
+
 
 
 class RootStore {

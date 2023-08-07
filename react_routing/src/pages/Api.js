@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Api.css"
 
 const Api = () => {
@@ -12,6 +12,10 @@ const Api = () => {
 
   const current = new Date();
   const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+
+  // useEffect(() => {
+  //  console.log(date)
+  // }, [])
 
   const handleUrlChange = (event) => {
     setUrl(event.target.value);
@@ -47,7 +51,8 @@ const Api = () => {
 
   return (
     <>
-      <div className='api'>
+
+      <div className='table table-striped api'>
 
         <select value={method} onChange={handleMethodChange}>
           <option value="GET">GET</option>
@@ -57,7 +62,7 @@ const Api = () => {
         </select>
 
         <input type="text" value={url} onChange={handleUrlChange} />
-        <button onClick={fetchData}>Submit</button>
+        <button className="btn btn-primary app" onClick={fetchData}>Submit</button>
 
         <div className="ap">Search:
           <input id="search-box" onChange={filterBySearch} />
@@ -68,11 +73,22 @@ const Api = () => {
             <h2>{!status ?
               "Response Data" : "Filtered data"
             }</h2>
-            
+
             <pre>{JSON.stringify(filteredList, null, 2)}</pre>
 
           </div>
-        )}
+        )};
+
+
+        {/* {
+          filteredData && responseData  . map ((
+            data.item
+          ) => {
+            return(
+
+            )
+          })
+        } */}
 
         {/* {responseData && responseData?.map((data, index) => {
         
@@ -85,12 +101,10 @@ const Api = () => {
           )
         })} */}
 
-      </div>
       
+      </div>
+
     </>
   );
 };
-
-
-
 export default Api;
